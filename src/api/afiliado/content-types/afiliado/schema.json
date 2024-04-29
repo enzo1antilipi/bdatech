@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "afiliados",
+  "info": {
+    "singularName": "afiliado",
+    "pluralName": "afiliados",
+    "displayName": "afiliado",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DOCUMENTO": {
+      "type": "biginteger"
+    },
+    "APELLIDO": {
+      "type": "text"
+    },
+    "NOMBRE": {
+      "type": "text"
+    },
+    "Sexo": {
+      "type": "string"
+    },
+    "Observaciones": {
+      "type": "text"
+    },
+    "escuelas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trabajo.trabajo",
+      "mappedBy": "Afiliados"
+    },
+    "TELEFONO": {
+      "type": "text"
+    },
+    "FechDeAfiliacion": {
+      "type": "date"
+    },
+    "Num_afiliado": {
+      "type": "string"
+    },
+    "Fech_Nacimiento": {
+      "type": "date"
+    }
+  }
+}

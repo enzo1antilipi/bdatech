@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trabajos",
+  "info": {
+    "singularName": "trabajo",
+    "pluralName": "trabajos",
+    "displayName": "Escuela",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NumEscu": {
+      "type": "string"
+    },
+    "NombEscuela": {
+      "type": "string"
+    },
+    "Sector": {
+      "type": "string"
+    },
+    "Dependencia": {
+      "type": "string"
+    },
+    "Periodo_funcionamiento": {
+      "type": "string"
+    },
+    "Ambito": {
+      "type": "string"
+    },
+    "Departamento": {
+      "type": "string"
+    },
+    "Localidad": {
+      "type": "string"
+    },
+    "Region": {
+      "type": "integer"
+    },
+    "Calle": {
+      "type": "string"
+    },
+    "Anexo": {
+      "type": "integer"
+    },
+    "CUE": {
+      "type": "integer"
+    },
+    "CUEANEXO": {
+      "type": "integer"
+    },
+    "Telefono": {
+      "type": "text"
+    },
+    "Tel_cod_area": {
+      "type": "string"
+    },
+    "Nro_Calle": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Afiliados": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::afiliado.afiliado",
+      "inversedBy": "escuelas"
+    }
+  }
+}
