@@ -26,8 +26,6 @@ services:
       - ./public/uploads:/opt/app/public/uploads
     ports:
       - "1337:1337"
-    networks:
-      - strapi
     depends_on:
       - strapiDB
 
@@ -48,13 +46,6 @@ services:
       #- ./data:/var/lib/mysql # if you want to use a bind folder
     ports:
       - "3306"
-    networks:
-      - strapi
 
 volumes:
   strapi-data:
-
-networks:
-  strapi:
-    name: Strapi
-    driver: bridge
