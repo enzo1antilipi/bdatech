@@ -1,12 +1,12 @@
-FROM node:16
+FROM node:18-alpine
 # Installing libvips-dev for sharp Compatibility
-RUN apt-get update && apt-get install build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git yarn
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git yarn
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
 COPY package.json ./
-#RUN npm install -g node-gyp
+RUN yarn install -g node-gyp sharp
 RUN  yarn install 
 ENV PATH /opt/node_modules/.bin:$PATH
 
