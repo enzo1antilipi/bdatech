@@ -6,7 +6,7 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
 COPY package.json ./
-RUN yarn install -g node-gyp sharp
+RUN yarn global add node-gyp sharp
 RUN  yarn install 
 ENV PATH /opt/node_modules/.bin:$PATH
 
